@@ -7,13 +7,18 @@ const getAllPublicPosts = () => {
   return axios.get(API_URL + "/public");
 };
 
-const getAllPrivatePosts = () => {
+const getAllTrucks = () => {
   return axios.get(API_URL + "/trucks", { headers: authHeader() });
 };
 
-const postService = {
-  getAllPublicPosts,
-  getAllPrivatePosts,
+const getAllDrivers = () => {
+  return axios.get(API_URL + "/drivers/alldrivers", { headers: authHeader() });
 };
 
-export default postService;
+const allService = {
+  getAllPublicPosts,
+  getAllTrucks,
+  getAllDrivers
+};
+
+export default allService;

@@ -14,12 +14,15 @@ const truckSchema = mongoose.Schema(
       
     },
     truckdriver: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'Driver',
+      // type: mongoose.Schema.Types.ObjectId,
+      // ref: 'Driver',
+      type: String,
+      required: [true, 'Please add a truck driver value'],
+      
     },
     status: {
       type: String,
-      default: 'Available'
+      default: 'NotAvailable'
     }
   },
   {

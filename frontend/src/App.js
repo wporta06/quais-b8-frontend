@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import AuthService from "./services/auth.service";
-import Login from "./components/Login";
-import Signup from "./components/Signup";
+import Login from "./components/Authentication/Login";
+import Signup from "./components/Authentication/Signup";
 import Home from "./components/Home";
-import Dashboard from "./components/Dashboard/Trucks";
+import Dashboard from "./components/Dashboard/Trucks/Trucks";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {

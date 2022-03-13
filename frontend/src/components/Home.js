@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import PostService from "../services/post.service";
+import PostService from "../services/all.service";
 
 const Home = () => {
   const [posts, setPosts] = useState([]);

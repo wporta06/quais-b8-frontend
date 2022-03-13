@@ -5,14 +5,16 @@ const User = require('../models/userModel')
 
 //Get All Trucks
 const getTrucks = asyncHandler(async (req, res) => {
+  console.log(req.user)
   // get only user trucks from id that we recieve from middleware
   const trucks = await Truck.find({ user: req.user.id })
-console.log(trucks)
+// console.log(trucks)
   res.status(200).json(trucks)
 })
 
 // get ONE TRUCK
 const getOneTruck = asyncHandler(async (req, res) => {
+  console.log(req.user)
   if (req.user.role == 'admin') {
     const truck = await Truck.findById(req.params.id)
     res.status(200).json(truck)
@@ -40,14 +42,15 @@ const addTruck = asyncHandler(async (req, res) => {
     throw new Error('TRUCK Matricul Already Exist')
   }
   // Make sure the admin logged in
-  if (req.user.role != 'admin') {
-    console.log('noot an admin')
-    res.status(401)
-    throw new Error('Admin needed')
-  }
+  // if (req.user.role != 'admin') {
+  //   console.log('noot an admin')
+  //   res.status(401)
+  //   throw new Error('Admin needed')
+  // }
     // Creat TRUCK 
     const truck = await Truck.create({
       matricul: req.body.matricul,
+      truckdriver: req.body.truckdriver,
       // status: 'a', //avalabele by default
       user: req.user.id,
     })
