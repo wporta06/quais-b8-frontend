@@ -5,6 +5,7 @@ import Login from "./components/Authentication/Login";
 import Signup from "./components/Authentication/Signup";
 import Home from "./components/Home";
 import Dashboard from "./components/Dashboard/Trucks/Trucks";
+import Footer from "./components/Footer";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
@@ -40,6 +41,7 @@ function App() {
                 Dashboard
               </Link>
             </li>
+            
           )}
         </div>
         
@@ -67,15 +69,15 @@ function App() {
           </div>
         )}
       </nav>
-
-      <div className="container mt-3">
+     
+      {/* <div className="container "> */}
         <Routes>
           <Route path="/home" element={<Home />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
         </Routes>
-      </div>
+      {/* </div> */}
     </div>
   );
 }

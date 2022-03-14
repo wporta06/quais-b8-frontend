@@ -17,11 +17,13 @@ const Home = () => {
 
   return (
     <div>
-      <h3>
+      {/* <h3>
         {posts.map((post, index) => (
           <div key={index}>{post.content}</div>
         ))}
-      </h3>
+      </h3> */}
+
+      
     </div>
   );
 };
